@@ -3,9 +3,9 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className={"relative"}>
-      <Image
+      {/* <Image
         src={"/images/site_long_final_new_2_1280.jpg"}
-        className={"absolute left-0 top-0 -z-10 opacity-30"} alt={""}      />
+        className={"absolute left-0 top-0 -z-10 opacity-30"} alt={""}      /> */}
       <header className={"h-banner bg-green-50"}>
         <nav className={"flex justify-between py-5 px-16"}>
           <div className={"w-60 ml-24 mt-1"}>
@@ -30,7 +30,7 @@ export default function Home() {
       </header>
       <main className="">
         {/* About */}
-        <section className={"relative bg-top bg-no-repeat"}>
+        <section className={"relative bg-about-background bg-top bg-no-repeat"}>
           <div className={"w-full flex justify-around mb-56"}>
             <Image
               src={"/images/drop.png"}
