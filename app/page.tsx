@@ -3,14 +3,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className={"relative"}>
-      <img
+      <Image
         src={"/images/site_long_final_new_2_1280.jpg"}
-        className={"absolute left-0 top-0 -z-10 opacity-30"}
-      />
+        className={"absolute left-0 top-0 -z-10 opacity-30"} alt={""}      />
       <header className={"h-banner bg-green-50"}>
         <nav className={"flex justify-between py-5 px-16"}>
           <div className={"w-60 ml-24 mt-1"}>
-            <img src={"/images/logo-2.png"} className={"w-full h-full"} />
+            <Image src={"/images/logo-2.png"} className={"w-full h-full"} alt={""} />
           </div>
           <ul
             className={
@@ -33,8 +32,9 @@ export default function Home() {
         {/* About */}
         <section className={"relative bg-top bg-no-repeat"}>
           <div className={"w-full flex justify-around mb-56"}>
-            <img
+            <Image
               src={"/images/drop.png"}
+              alt={""}
               className={"absolute -top-20 z-10 w-44"}
             />
           </div>
@@ -53,7 +53,7 @@ export default function Home() {
               </p>
               <p className={"mt-2 font-proxima-regular text-md leading-tight"}>
                 Экстракт из семня грейпфрута содержит биофлаваноид - нарингин,
-                обладающий уникальными свойствами "природного антибиотика" и
+                обладающий уникальными свойствами &quot;природного антибиотика&quot; и
                 антиоксиданта.
               </p>
               <p className={"mt-2 font-proxima-regular text-md leading-tight"}>
@@ -62,12 +62,12 @@ export default function Home() {
               </p>
             </div>
             <div className={"w-3/12 flex items-center"}>
-              <img src={"/images/citrolux.png"} className={""} />
+              <Image src={"/images/citrolux.png"} alt={""} />
             </div>
             <div className={"w-5/12 flex flex-col font-proxima-regular text-gray-600"}>
               <div className={"self-end"}>
                 <a href="" className={"flex flex-col items-center self-end "}>
-                  <img src="/images/pdf.png" alt="" className={"w-16"} />
+                  <Image src="/images/pdf.png" alt="" className={"w-16"} />
                   <p
                     className={
                       "w-40 text-md text-center underline text-main leading-tight"
@@ -91,7 +91,7 @@ export default function Home() {
           </div>
           <div className={"w-full flex justify-around p-10"}>
             <div className={"flex flex-col items-center w-24"}>
-              <img src="/images/eco-product.png" alt="" className={"w-24"} />
+              <Image src="/images/eco-product.png" alt="" className={"w-24"} />
               <p
                 className={
                   "mt-2 font-proxima-extra-bold uppercase text-xl text-center leading-tight tracking-wide text-gray-600"
@@ -101,7 +101,7 @@ export default function Home() {
               </p>
             </div>
             <div className={"flex flex-col items-center w-24"}>
-              <img src="/images/eco-sources.png" alt="" className={"w-24"} />
+              <Image src="/images/eco-sources.png" alt="" className={"w-24"} />
               <p
                 className={
                   "mt-2 font-proxima-extra-bold uppercase text-xl text-center leading-tight tracking-wide text-gray-600"
