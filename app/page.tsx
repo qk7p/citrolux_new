@@ -1,11 +1,11 @@
 export default function Home() {
   return (
     <div className={"relative"}>
-      <img
+      {/* <img
         src={"/images/site_long_final_new_2_1280.jpg"}
         className={"absolute left-0 top-0 -z-10 opacity-30"}
         alt={""}
-      />
+      /> */}
       <header className={"h-banner bg-green-50"}>
         <nav className={"flex justify-between py-5 px-16"}>
           <div className={"w-60 ml-24 mt-1"}>
