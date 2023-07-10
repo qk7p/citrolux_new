@@ -13,6 +13,13 @@ module.exports = {
       },
       height: {
         banner: "45.9375rem",
+        slider: "30rem",
+        grape: "21.87rem",
+        citro: "25rem",
+      },
+      width: {
+        grape: "21.87rem",
+        citro: "25rem",
       },
       backgroundImage: {
         "banner-image": "url('/images/banner.jpg')",
@@ -20,6 +27,16 @@ module.exports = {
       },
       colors: {
         main: "#c8344d",
+        "footer-start": "#79c676",
+        "footer-end": "#75c471",
+      },
+      gridTemplateRows: {
+        "about-rows": "auto auto",
+        "immunity-rows": "auto auto auto",
+      },
+      gridTemplateColumns: {
+        "about-cols": "1.3fr 0.8fr 1.3fr",
+        "immunity-cols": "auto auto auto",
       },
     },
   },

@@ -22,3 +22,9 @@ html {
   font-family: "ProximaRegular";
   src: url("/fonts/Proxima_Nova_Condensed_Regular.otf");
 }
+
+@layer components {
+  .nav_link__hover {
+    @apply relative after:content-[''] after:absolute after:-bottom-2 after:-left-2 after:w-0 after:bg-main after:h-1 after:rounded-md hover:after:block hover:after:w-1/2 after:ease-linear after:duration-300;
+  }
+}
