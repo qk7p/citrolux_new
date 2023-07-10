@@ -261,7 +261,7 @@ export default function Home() {
                       "w-40 h-40 text-center flex items-center p-2  rounded-full bg-white font-proxima-regular text-lg leading-5 mt-2"
                     }
                   >
-                    Повышение сопротивляемости организмы инфекциям
+                    Повышение сопротивляемости организма инфекциям
                   </p>
                 </div>
               </div>
