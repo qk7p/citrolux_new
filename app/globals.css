@@ -14,14 +14,30 @@ html {
 }
 
 @font-face {
-  font-family: "ProximaExtraBold";
-  src: url("/fonts/Proxima_Nova_Condensed_Extrabold.otf");
+  font-family: "OpenSansRegular";
+  src: url("/fonts/OpenSans-Regular.ttf");
 }
 
 @font-face {
-  font-family: "ProximaRegular";
-  src: url("/fonts/Proxima_Nova_Condensed_Regular.otf");
+  font-family: "OpenSansSemiBold";
+  src: url("/fonts/OpenSans-SemiBold.ttf");
 }
+
+@font-face {
+  font-family: "OpenSansBold";
+  src: url("/fonts/OpenSans-Bold.ttf");
+}
+
+@font-face {
+  font-family: "OpenSansLightItalic";
+  src: url("/fonts/OpenSans-LightItalic.ttf");
+}
+
+@font-face {
+  font-family: "OpenSansLight";
+  src: url("/fonts/OpenSans-Light.ttf");
+}
+
 
 @layer components {
   .nav_link__hover {

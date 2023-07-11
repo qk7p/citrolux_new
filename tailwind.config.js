@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -8,12 +11,15 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "proxima-extra-bold": ["ProximaExtraBold"],
-        "proxima-regular": ["ProximaRegular"],
+        "open-sans-regular": ["OpenSansRegular"],
+        "open-sans-semibold": ["OpenSansSemiBold"],
+        "open-sans-bold": ["OpenSansBold"],
+        "open-sans-light-italic": ["OpenSansLightItalic"],
+        "open-sans-light": ["OpenSansLight"],
       },
       height: {
         banner: "45.9375rem",
-        slider: "30rem",
+        slider: "36rem",
         grape: "21.87rem",
         citro: "25rem",
       },
@@ -24,9 +30,13 @@ module.exports = {
       backgroundImage: {
         "banner-image": "url('/images/banner.jpg')",
         "about-background": "url('/images/about-background.png')",
+        "banner-background": "url('/images/banner-background.jpg')",
+        "footer-background": "url('/images/footer-background.gif')",
+        "immunity-background": "url('/images/green.jpg')",
+        "slide-1": "url('/images/slide-1.jpeg')",
       },
       colors: {
-        main: "#c8344d",
+        main: "#ef462c",
         "footer-start": "#79c676",
         "footer-end": "#75c471",
       },
@@ -38,7 +48,23 @@ module.exports = {
         "about-cols": "1.3fr 0.8fr 1.3fr",
         "immunity-cols": "auto auto auto",
       },
+      textShadow: {
+        sm: "2px 2px 15px var(--tw-shadow-color)",
+        default: "0 2px 4px var(--tw-shadow-color)",
+        lg: "0 8px 16px var(--tw-shadow-color)",
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          "text-shadow": (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme("textShadow") }
+      );
+    }),
+  ],
 };
