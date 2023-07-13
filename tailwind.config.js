@@ -37,8 +37,9 @@ module.exports = {
       },
       colors: {
         main: "#ef462c",
-        "footer-start": "#79c676",
-        "footer-end": "#75c471",
+        "footer-start": "#97d794",
+        "footer-end": "#7ec87b",
+        "text-semi-transparent": "rgba(255, 255, 255, 0.27)",
       },
       gridTemplateRows: {
         "about-rows": "auto auto",
