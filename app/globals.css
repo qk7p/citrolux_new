@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -38,9 +37,36 @@ html {
   src: url("/fonts/OpenSans-Light.ttf");
 }
 
-
 @layer components {
   .nav_link__hover {
     @apply relative after:content-[''] after:absolute after:-bottom-2 after:-left-2 after:w-0 after:bg-main after:h-1 after:rounded-md hover:after:block hover:after:w-1/2 after:ease-linear after:duration-300;
   }
+}
+
+.wave {
+  overflow: hidden;
+  position: relative;
+  width: 630px;
+  height: 50px;
+}
+
+.circle {
+  position: absolute;
+  width: 630px;
+  height: 20px;
+  background: radial-gradient(
+    16px,
+    transparent,
+    transparent 4px,
+    black 4px,
+    black 10px,
+    transparent 11px
+  );
+  background-size: 30px 40px;
+}
+
+.circle2 {
+  top: 20px;
+  left: 15px;
+  background-position: 0px -20px;
 }

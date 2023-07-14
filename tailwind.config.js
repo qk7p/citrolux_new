@@ -34,15 +34,18 @@ module.exports = {
         "footer-background": "url('/images/footer-background.gif')",
         "immunity-background": "url('/images/green.jpg')",
         "slide-1": "url('/images/slide-1.jpeg')",
+        "wave": "url('/images/wave.svg')",
+        "wave-bold": "url('/images/wave-bold.svg')",
       },
       colors: {
         main: "#ef462c",
         "footer-start": "#97d794",
         "footer-end": "#7ec87b",
         "text-semi-transparent": "rgba(255, 255, 255, 0.27)",
+        "alert": "#d5d5d6",
       },
       gridTemplateRows: {
-        "about-rows": "auto auto",
+        "about-rows": "auto auto auto",
         "immunity-rows": "auto auto auto",
       },
       gridTemplateColumns: {
