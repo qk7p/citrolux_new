@@ -25,7 +25,7 @@ const About: FC = () => {
           <span className={"text-main"}>Цитролюкс</span> &ndash; забота о себе и
           близких каждый день.
         </h4>
-        <div className={"row-span-3 flex flex-col items-center"}>
+        <div className={"row-span-3 flex flex-col items-center justify-around"}>
           <img src={"/images/citrolux-flakon.png"} alt={""} />
         </div>
         <div className={"flex justify-end"}>
