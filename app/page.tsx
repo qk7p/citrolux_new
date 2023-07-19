@@ -8,9 +8,9 @@ import { WhereToBuy } from "./component/WhereToBuy";
 
 export default function Home() {
   return (
-    <div className={"relative ease-in duration-200"}>
+    <>
       <Header />
-      <main className="">
+      <main>
         <About />
         <Slider />
         <Grapefruit />
@@ -18,6 +18,6 @@ export default function Home() {
         <WhereToBuy />
       </main>
       <Footer />
-    </div>
+    </>
   );
 }

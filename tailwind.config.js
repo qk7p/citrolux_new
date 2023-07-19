@@ -23,6 +23,9 @@ module.exports = {
         grape: "21.87rem",
         citro: "25rem",
       },
+      minHeight: {
+        slider: "36rem",
+      },
       width: {
         grape: "21.87rem",
         citro: "25rem",
@@ -34,7 +37,7 @@ module.exports = {
         "footer-background": "url('/images/footer-background.gif')",
         "immunity-background": "url('/images/green.jpg')",
         "slide-1": "url('/images/slide-1.jpeg')",
-        "wave": "url('/images/wave.svg')",
+        wave: "url('/images/wave.svg')",
         "wave-bold": "url('/images/wave-bold.svg')",
       },
       colors: {
@@ -42,11 +45,12 @@ module.exports = {
         "footer-start": "#97d794",
         "footer-end": "#7ec87b",
         "text-semi-transparent": "rgba(255, 255, 255, 0.27)",
-        "alert": "#d5d5d6",
+        alert: "#d5d5d6",
       },
       gridTemplateRows: {
         "about-rows": "auto auto auto",
         "immunity-rows": "auto auto auto",
+        "expand-hack": "0fr",
       },
       gridTemplateColumns: {
         "about-cols": "1.3fr 0.8fr 1.3fr",

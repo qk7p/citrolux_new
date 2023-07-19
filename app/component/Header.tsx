@@ -1,46 +1,36 @@
 import { FC } from "react";
+import { NavMenu } from "./NavMenu";
 
 const Header: FC = () => {
   return (
     <header
       className={
-        "h-banner bg-banner-background bg-cover bg-no-repeat bg-top relative"
+        "bg-main md:h-banner md:bg-banner-background bg-cover bg-no-repeat bg-top md:relative"
       }
     >
-      <nav className={"flex justify-between py-5 px-16"}>
-        <div className={"w-60 ml-24 mt-1"}>
+      <nav
+        className={
+          "flex flex-row justify-between items-center md:items-start md:py-5 md:px-16"
+        }
+      >
+        <div className={"h-16 p-2 px-4 md:h-auto md:w-60 md:ml-24 mt-1"}>
           <a href="#">
             <img
-              src={"/images/logo-2.png"}
-              className={"w-full h-full"}
-              alt={""}
+              src={"/images/logo-glow.png"}
+              className={"hidden md:block w-full h-full"}
+              alt={"citrolux_logo"}
+            />
+            <img
+              src={"/images/citrolux-logo-white.png"}
+              className={"md:hidden w-full h-full"}
+              alt={"citrolux_logo_white"}
             />
           </a>
         </div>
-        <ul
-          className={
-            "w-full flex flex-row justify-end pt-6 uppercase font-open-sans-bold text-sm tracking-wide text-main"
-          }
-        >
-          <li>
-            <a href="#where-to-buy" className={"nav_link__hover"}>
-              где приобрести
-            </a>
-          </li>
-          <li className={"ml-6"}>
-            <a href="#" className={"nav_link__hover"}>
-              рекомендации по применению
-            </a>
-          </li>
-          <li className={"ml-6"}>
-            <a href="#" className={"nav_link__hover"}>
-              производитель
-            </a>
-          </li>
-        </ul>
+        <NavMenu />
       </nav>
-      <div className={"absolute right-56 bottom-3 w-60"}>
-        <img src="/images/citrolux-vs-pack.png" alt="" />
+      <div className={"hidden md:block md:absolute md:w-60 right-56 bottom-3 "}>
+        <img src="/images/citrolux-vs-pack.png" alt="citrolux_pack" className={"w-40 m-auto"} />
       </div>
     </header>
   );

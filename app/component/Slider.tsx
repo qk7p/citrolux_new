@@ -4,62 +4,163 @@ import { FC, useState, MouseEvent } from "react";
 
 type SliderItem = {
   img: string;
-  title: string;
-  description: string[];
+  description: DescriptionItem[];
+  position: ItemPosition;
 };
+
+type DescriptionItem = {
+  text: string;
+  textStyle: string;
+};
+
+type ItemPosition = "top-left" | "top-right" | "bottom-left" | "bottom-right";
 
 const sliders: SliderItem[] = [
   {
+    position: "bottom-left",
     img: "/images/slide-1.jpeg",
-    title: "Хотите, чтобы Ваш ребенок меньше болел?",
     description: [
-      "Цитролюкс - правильное средство для здоровья с детства! Заведи правильную привычку",
-      "Цитролюкс по 28 капель 2 раза в день поможет забыть о простудах",
+      {
+        text: "Хотите, чтобы Ваш ребенок меньше болел?",
+        textStyle:
+          "text-2xl font-proxima-bold text-white text-shadow-sm shadow-black",
+      },
+      {
+        text: "Цитролюкс - правильное средство для здоровья с детства! Заведи правильную привычку",
+        textStyle:
+          "text-white text-lg font-open-sans-regular text-shadow-sm shadow-black mt-2",
+      },
+      {
+        text: "Цитролюкс по 28 капель 2 раза в день поможет забыть о простудах",
+        textStyle:
+          "text-white text-lg font-open-sans-regular text-shadow-sm shadow-black mt-2",
+      },
     ],
   },
   {
+    position: "top-right",
     img: "/images/slide-2.jpg",
-    title: "Хотите, чтобы отпуск прошел без забот?",
     description: [
-      "Принимайте Цитролюкс!",
-      "Лето - самое время прислушаться к здоровью!",
-      "Заведи полезную привычку!",
-      "Цитролюкс по 28 капель 2 раза в день для здорового отдыха качества люкс!",
+      {
+        text: "Хотите, чтобы отпуск прошел без забот?",
+        textStyle: "text-3xl font-open-sans-light text-red-500",
+      },
+      {
+        text: "Принимайте Цитролюкс!",
+        textStyle: "text-sky-900 font-open-sans-bold text-xl mt-2",
+      },
+      {
+        text: "Лето - самое время прислушаться к здоровью!",
+        textStyle: "text-sky-900 font-open-sans-bold text-xl",
+      },
+      {
+        text: "Заведи полезную привычку!",
+        textStyle: "text-sky-900 font-open-sans-bold text-xl",
+      },
+      {
+        text: "Цитролюкс по 28 капель 2 раза в день для здорового отдыха качества люкс!",
+        textStyle: "text-gray-600 text-xl font-open-sans-semibold mt-2",
+      },
     ],
   },
   {
+    position: "bottom-right",
     img: "/images/slide-3.jpg",
-    title: "Зима не в радость? Одолевают простуды?",
     description: [
-      "Принимайте Цитролюкс!",
-      "Зима не повод ставить крест на здоровье!",
-      "Заведи полезную привычку!",
-      "Цитролюкс по 28 капель 2 раза в день поможет наслаждаться здоровьем всю зиму!",
+      {
+        text: "Зима не в радость? Одолевают простуды?",
+        textStyle:
+          "text-3xl font-open-sans-regular text-red-500 text-shadow-default shadow-white",
+      },
+      {
+        text: "Принимайте Цитролюкс!",
+        textStyle: "text-sky-900 font-open-sans-bold text-xl mt-2",
+      },
+      {
+        text: "Зима не повод ставить крест на здоровье!",
+        textStyle: "text-sky-900 font-open-sans-bold text-xl",
+      },
+      {
+        text: "Заведи полезную привычку!",
+        textStyle: "text-sky-900 font-open-sans-bold text-xl",
+      },
+      {
+        text: "Цитролюкс по 28 капель 2 раза в день поможет наслаждаться здоровьем всю зиму!",
+        textStyle: "text-gray-600 text-xl font-open-sans-semibold mt-2",
+      },
     ],
   },
   {
+    position: "top-right",
     img: "/images/slide-4.jpg",
-    title: "Нет времени, чтобы болеть?",
     description: [
-      "Принимайте Цитролюкс!",
-      "И здоровье пусть работает на Вас каждый день и час!",
-      "Заведи полезную привычку!",
-      "Цитролюкс по 28 капель 2 раза в день поможет иммунитету заработать за двоих, а Вам безболезненно зарабатывать деньги!",
+      {
+        text: "Нет времени, чтобы болеть?",
+        textStyle: "text-3xl font-open-sans-light text-gray-600 text-shadow-sm",
+      },
+      {
+        text: "Принимайте Цитролюкс!",
+        textStyle: `text-red-800 font-open-sans-semibold text-lg mt-2`,
+      },
+      {
+        text: "И здоровье пусть работает на Вас каждый день и час!",
+        textStyle: "text-red-800 font-open-sans-semibold text-lg",
+      },
+      {
+        text: "Заведи полезную привычку!",
+        textStyle: "text-red-800 font-open-sans-semibold text-lg",
+      },
+      {
+        text: "Цитролюкс по 28 капель 2 раза в день поможет иммунитету заработать за двоих, а Вам безболезненно зарабатывать деньги!",
+        textStyle: "text-gray-600 text-xl font-open-sans-regular mt-2",
+      },
     ],
   },
   {
+    position: "top-right",
     img: "/images/slide-5.jpg",
-    title: "Хотите, чтобы ребенок меньше болел?",
     description: [
-      "Цитролюкс - правильное средство для здоровья с детства!",
-      "Заведи полезную привычку!",
-      "Цитролюкс по 28 капель поможет забыть о простудах!",
+      {
+        text: "Хотите, чтобы ребенок меньше болел?",
+        textStyle: "text-3xl font-open-sans-light text-white ",
+      },
+      {
+        text: "Цитролюкс - правильное средство для здоровья с детства!",
+        textStyle: "text-yellow-200 font-open-sans-regular text-xl mt-2",
+      },
+      {
+        text: "Заведи полезную привычку!",
+        textStyle: "text-yellow-200 font-open-sans-regular text-xl",
+      },
+      {
+        text: "Цитролюкс по 28 капель поможет забыть о простудах!",
+        textStyle: "text-white font-open-sans-regular text-xl mt-2",
+      },
     ],
   },
 ];
 
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
+
+  function handlePosition(postion: ItemPosition): string {
+    switch (postion) {
+      case "top-left":
+        return "items-start justify-start";
+
+      case "top-right":
+        return "items-start justify-end";
+
+      case "bottom-left":
+        return "items-end justify-start";
+
+      case "bottom-right":
+        return "items-end justify-end";
+
+      default:
+        return "items-end justify-start";
+    }
+  }
 
   const handlePreviousSlide = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -80,10 +181,10 @@ const Slider: FC = () => {
   };
 
   return (
-    <section className={"mt-20"}>
+    <section className={"hidden md:block mt-20"}>
       <div
         className={
-          "relative  flex flex-row items-center w-full h-slider overflow-hidden"
+          "relative flex flex-row items-center w-full min-h-slider overflow-hidden"
         }
       >
         <div
@@ -92,7 +193,7 @@ const Slider: FC = () => {
           }
         >
           <button onClick={handlePreviousSlide} className={"w-full"}>
-            <img src="/images/arrow.svg" alt="" />
+            <img src="/images/arrow.svg" alt="arrow_left" />
           </button>
         </div>
         <div
@@ -101,30 +202,22 @@ const Slider: FC = () => {
           }
         >
           <button onClick={handleNextSlider} className={"w-full"}>
-            <img src="/images/arrow.svg" alt="" />
+            <img src="/images/arrow.svg" alt="arrow_right" />
           </button>
         </div>
         <div
-          className={
-            "w-full h-full bg-top bg-cover bg-no-repeat flex flex-row items-end"
-          }
+          className={`w-full min-h-slider bg-top bg-cover bg-no-repeat flex flex-row ${handlePosition(
+            sliders[activeSlide].position
+          )}`}
           style={{ backgroundImage: `url(${sliders[activeSlide].img})` }}
         >
           <div
             className={"w-1/2 h-1/2 flex flex-col items-center justify-center"}
           >
-            <div className={"font-open-sans-regular px-8 "}>
-              <h3 className={"text-white text-2xl text-shadow-sm shadow-black"}>
-                {sliders[activeSlide].title}
-              </h3>
+            <div className={"p-8"}>
               {sliders[activeSlide].description.map((element, index) => (
-                <p
-                  key={index}
-                  className={
-                    "text-white text-xl mt-2 text-shadow-sm shadow-black"
-                  }
-                >
-                  {element}
+                <p key={index} className={`${element.textStyle}`}>
+                  {element.text}
                 </p>
               ))}
             </div>

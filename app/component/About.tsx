@@ -5,16 +5,16 @@ const About: FC = () => {
     <section
       className={"relative bg-about-background bg-contain bg-top bg-no-repeat"}
     >
-      <div className={"w-full flex flex-col items-center mb-56 2xl:mb-80"}>
+      <div className={"hidden w-full md:flex flex-col items-center md:mb-56 2xl:mb-80"}>
         <img
           src={"/images/drop.png"}
-          alt={""}
-          className={"absolute -top-20 z-10 w-44"}
+          alt={"drop_image"}
+          className={"md:absolute w-44 -top-20 z-10"}
         />
       </div>
       <div
         className={
-          "grid grid-rows-about-rows grid-cols-about-cols w-2/3 m-auto"
+          "flex flex-col md:grid grid-rows-about-rows grid-cols-about-cols w-2/3 m-auto"
         }
       >
         <h4
@@ -26,11 +26,11 @@ const About: FC = () => {
           близких каждый день.
         </h4>
         <div className={"row-span-3 flex flex-col items-center justify-around"}>
-          <img src={"/images/citrolux-flakon.png"} alt={""} />
+          <img src={"/images/citrolux-flakon.png"} alt={"citrolux_flakon"} />
         </div>
         <div className={"flex justify-end"}>
           <a href="" className={"flex flex-col items-center hover:opacity-70"}>
-            <img src="/images/pdf.png" alt="" className={"w-16"} />
+            <img src="/images/pdf.png" alt="pdf_logo" className={"w-16"} />
             <p
               className={
                 "w-40 text-sm text-center underline text-main leading-tight tracking-tight"
@@ -70,24 +70,28 @@ const About: FC = () => {
             детей старше 12 лет.
           </p>
         </div>
-        <div className={" flex flex-col font-open-snans-regular text-black"}>
-          <h5 className={"text-xl text-main font-open-sans-light mt-3"}>
+        <div className={"flex flex-col font-open-snans-regular text-black"}>
+          <h5 className={"mt-3 text-xl text-main font-open-sans-light"}>
             Состав:
           </h5>
           <p>&ndash; Экстракт семян грейфрута</p>
           <p>&ndash; Аскорбиновая кислота</p>
-          <h5 className={"text-xl text-main font-open-sans-light pr-12"}>
+          <h5 className={"pr-12 text-xl text-main font-open-sans-light"}>
             Содержание активных компонентов в 1 мл раствора:
           </h5>
           <p>&ndash; Цитрусовые биофлаваноиды (нарингин) - не менее 8мг/мл</p>
           <p>&ndash; Витамин С 30 мг/мл</p>
-          <h5 className={"text-xl text-main font-open-sans-light "}>
+          <h5 className={"text-xl text-main font-open-sans-light"}>
             Форма выпуска:
           </h5>
           <p>&ndash; Раствор по 20 мл или 50 мл во флаконе</p>
         </div>
-        <div className={"flex flex-col items-center w-28 place-self-end mt-4"}>
-          <img src="/images/eco-product.png" alt="" className={"w-28"} />
+        <div className={"place-self-end flex flex-col items-center w-28 mt-4"}>
+          <img
+            src="/images/eco-product.png"
+            alt="eco_product_logo"
+            className={"w-28"}
+          />
           <p
             className={
               "mt-2 font-open-sans-semibold uppercase text-lg text-center leading-tight tracking-wide text-gray-600"
@@ -96,8 +100,14 @@ const About: FC = () => {
             Натуральный продукт
           </p>
         </div>
-        <div className={"flex flex-col items-center w-28 place-self-start mt-16"}>
-          <img src="/images/eco-sources.png" alt="" className={"w-28"} />
+        <div
+          className={"place-self-start flex flex-col items-center w-28 mt-16"}
+        >
+          <img
+            src="/images/eco-sources.png"
+            alt="eco_sources_logo"
+            className={"w-28"}
+          />
           <p
             className={
               "mt-2 font-open-sans-semibold uppercase text-lg text-center leading-tight tracking-wide text-gray-600"

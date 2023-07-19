@@ -23,11 +23,15 @@ const Immunity: FC = () => {
                   Нарингин
                 </p>
                 <div className={"flex items-center m-4"}>
-                  <img src="/images/naringin.svg" alt="" className={"h-40"} />
+                  <img
+                    src="/images/naringin.svg"
+                    alt="naringin"
+                    className={"h-40"}
+                  />
                 </div>
               </div>
               <div className={"w-6 m-2 mt-12"}>
-                <img src="/images/plus_wide.svg" alt="" />
+                <img src="/images/plus_wide.svg" alt="plus_icon" />
               </div>
               <div className={"pt-4"}>
                 <p
@@ -38,7 +42,11 @@ const Immunity: FC = () => {
                   Витамин С
                 </p>
                 <div className={"flex items-center m-4"}>
-                  <img src="/images/vitamin-c.svg" alt="" className={"h-40"} />
+                  <img
+                    src="/images/vitamin-c.svg"
+                    alt="vitamin_c"
+                    className={"h-40"}
+                  />
                 </div>
               </div>
             </div>
@@ -46,45 +54,54 @@ const Immunity: FC = () => {
               <div className={"w-full h-5 mt-4"}>
                 <img
                   src="/images/arrow-loose.svg"
-                  alt=""
+                  alt="arrow_loose_icon"
                   className={"w-full h-full"}
                 />
               </div>
-              <div className="h-2 bg-wave-bold bg-repeat-x mt-2" />
+              <div className="h-2 mt-2 bg-wave-bold bg-repeat-x" />
               <h4
                 className={
-                  "font-open-sans-light uppercase text-main text-3xl text-center my-2 tracking-wider"
+                  "my-2 font-open-sans-light uppercase text-main text-3xl text-center tracking-wider"
                 }
               >
                 усиление иммунной защиты
               </h4>
               <div className="h-2 bg-wave-bold bg-repeat-x" />
-              <div className={"flex flex-row items-center mt-4"}>
-                <div className={"flex flex-col items-center mx-2"}>
-                  <img src="/images/arrow_down.svg" alt="" className={"w-16"} />
+              <div className={"mt-4 flex flex-row items-center"}>
+                <div className={"mx-2 flex flex-col items-center "}>
+                  <img
+                    src="/images/arrow_down.svg"
+                    alt="arrow_icon"
+                    className={"w-16"}
+                  />
                   <p
                     className={
-                      "w-40 h-40 text-center flex items-center p-2  rounded-full bg-white font-open-sans-semibold text-sm leading-5 mt-2"
+                      "p-2 mt-2 w-44 aspect-square flex items-center text-center rounded-full bg-white font-open-sans-semibold text-md leading-5"
                     }
                   >
                     Регуляция иммунологических реакций
                   </p>
                 </div>
-                <div className={"flex flex-col items-center mx-2"}>
+                <div className={"mx-8 flex flex-col items-center "}>
                   <img src="/images/arrow_down.svg" alt="" className={"w-16"} />
+
                   <p
                     className={
-                      "w-40 h-40 text-center flex items-center p-2  rounded-full bg-white font-open-sans-semibold text-sm leading-5 mt-2"
+                      "p-2 mt-2 w-44 aspect-square flex items-center text-center rounded-full bg-white font-open-sans-semibold text-md leading-5"
                     }
                   >
-                    Улучшение фагоцитоза
+                    Усиление активности иммуных клеток
                   </p>
                 </div>
-                <div className={"flex flex-col items-center mx-2"}>
-                  <img src="/images/arrow_down.svg" alt="" className={"w-16"} />
+                <div className={"mx-2 flex flex-col items-center"}>
+                  <img
+                    src="/images/arrow_down.svg"
+                    alt="arrow_icon"
+                    className={"w-16"}
+                  />
                   <p
                     className={
-                      "w-40 h-40 text-center flex items-center p-2  rounded-full bg-white font-open-sans-semibold text-sm leading-5 mt-2"
+                      "p-2 mt-2 w-44 aspect-square flex items-center text-center rounded-full bg-white font-open-sans-semibold text-md leading-5"
                     }
                   >
                     Повышение сопротивляемости организма инфекциям
