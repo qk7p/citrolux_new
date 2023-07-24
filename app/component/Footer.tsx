@@ -34,44 +34,7 @@ const Footer: FC = () => {
                 www.pikfarma.ru
               </a>
             </div>
-          </div>
-          <div className={"flex items-center"}>
-            <a
-              href="http://citrolux.ru/#"
-              target={"_blank"}
-              className={"hover:opacity-70"}
-            >
-              {" "}
-              <img
-                src="/images/old_fb.png"
-                alt="facebook_logo"
-                className={"w-10 mx-1"}
-              />
-            </a>
-            <a
-              href="http://citrolux.ru/#"
-              target={"_blank"}
-              className={"hover:opacity-70"}
-            >
-              <img
-                src="/images/old_tw.png"
-                alt="twitter_logo"
-                className={"w-10 mx-1"}
-              />
-            </a>
-            <a
-              href="http://youtube.com/pikfarma"
-              target={"_blank"}
-              className={"hover:opacity-70"}
-            >
-              {" "}
-              <img
-                src="/images/old_yt.png"
-                alt="youtube_logo"
-                className={"w-10 mx-1"}
-              />
-            </a>
-          </div>
+          </div>   
         </div>
       </div>
       <h2
