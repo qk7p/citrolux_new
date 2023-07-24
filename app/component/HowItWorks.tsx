@@ -1,8 +1,8 @@
 import { FC } from "react";
 
-const Grapefruit: FC = () => {
+const HowItWorks: FC = () => {
   return (
-    <section className={"mt-20"}>
+    <section className={"mt-20"} id={"how-it-works"}>
       <div className={"flex w-10/12 m-auto"}>
         <div className={"flex flex-col w-1/2 font-open-sans-regular"}>
           <h4
@@ -33,7 +33,7 @@ const Grapefruit: FC = () => {
               "mb-4 px-8 text-center font-open-sans-regular text-lg text-gray-500 leading-5 tracking-wide"
             }
           >
-            Нарингин обладает свойствами природного антибиотика и антиоксиданта
+            Нарингин обладает свойствами "природного антибиотика" и антиоксиданта
           </p>
           <div className="">
             <img src="/images/grapefruit.png" alt="grapefruit" />
@@ -44,4 +44,4 @@ const Grapefruit: FC = () => {
   );
 };
 
-export { Grapefruit };
+export { HowItWorks };

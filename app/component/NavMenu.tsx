@@ -35,21 +35,33 @@ const NavMenu: FC = () => {
         )}
       >
         <li>
+          <a href="#about" className={"md:nav_link__hover lg:nav_link__hover"}>
+            О продукте
+          </a>
+        </li>
+        <li className={"md:ml-6"}>
+          <a
+            href="#how-it-works"
+            className={"md:nav_link__hover lg:nav_link__hover"}
+          >
+            Как работает Цитролюкс?
+          </a>
+        </li>
+        <li className={"md:ml-6"}>
+          <a
+            href="/files/citrolux.pdf"
+            target={"_blank"}
+            className={"md:nav_link__hover lg:nav_link__hover"}
+          >
+            Рекомендации по применению
+          </a>
+        </li>
+        <li className={"md:ml-6"}>
           <a
             href="#where-to-buy"
             className={"md:nav_link__hover lg:nav_link__hover"}
           >
-            где приобрести
-          </a>
-        </li>
-        <li className={"md:ml-6"}>
-          <a href="#" className={"md:nav_link__hover lg:nav_link__hover"}>
-            рекомендации по применению
-          </a>
-        </li>
-        <li className={"md:ml-6"}>
-          <a href="#" className={"md:nav_link__hover lg:nav_link__hover"}>
-            производитель
+            Где купить?
           </a>
         </li>
       </ul>

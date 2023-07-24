@@ -32,7 +32,7 @@ module.exports = {
       },
       backgroundImage: {
         "banner-image": "url('/images/banner.jpg')",
-        "about-background": "url('/images/about-background.png')",
+        "about-background": "url('/images/about-background-v2.png')",
         "banner-background": "url('/images/banner-background.jpg')",
         "footer-background": "url('/images/footer-background.gif')",
         "immunity-background": "url('/images/green.jpg')",

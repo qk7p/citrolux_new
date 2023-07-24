@@ -3,9 +3,14 @@ import { FC } from "react";
 const About: FC = () => {
   return (
     <section
-      className={"relative bg-about-background bg-contain bg-top bg-no-repeat"}
+      className={"relative bg-about-background bg-cover bg-top bg-no-repeat"}
+      id={"about"}
     >
-      <div className={"hidden w-full md:flex flex-col items-center md:mb-56 2xl:mb-80"}>
+      <div
+        className={
+          "hidden w-full md:flex flex-col items-center md:mb-56 2xl:mb-56"
+        }
+      >
         <img
           src={"/images/drop.png"}
           alt={"drop_image"}
@@ -19,17 +24,21 @@ const About: FC = () => {
       >
         <h4
           className={
-            "italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
+            "mt-20 italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
           }
         >
           <span className={"text-main"}>Цитролюкс</span> &ndash; забота о себе и
           близких каждый день.
         </h4>
-        <div className={"row-span-3 flex flex-col items-center justify-around"}>
+        <div className={"row-span-2 flex flex-col items-center justify-start"}>
           <img src={"/images/citrolux-flakon.png"} alt={"citrolux_flakon"} />
         </div>
-        <div className={"flex justify-end"}>
-          <a href="" className={"flex flex-col items-center hover:opacity-70"}>
+        <div className={"mt-20 flex justify-end"}>
+          <a
+            href="/files/citrolux.pdf"
+            target={"_blank"}
+            className={"flex flex-col items-center hover:opacity-70"}
+          >
             <img src="/images/pdf.png" alt="pdf_logo" className={"w-16"} />
             <p
               className={
@@ -84,36 +93,60 @@ const About: FC = () => {
           <h5 className={"text-xl text-main font-open-sans-light"}>
             Форма выпуска:
           </h5>
-          <p>&ndash; Раствор по 20 мл или 50 мл во флаконе</p>
+          <p>&ndash; Раствор по 50 мл во флаконе</p>
         </div>
-        <div className={"place-self-end flex flex-col items-center w-28 mt-4"}>
+        <div
+          className={"mt-14 place-self-start justify-self-end flex flex-col items-center w-fit"}
+        >
           <img
-            src="/images/eco-product.png"
+            src="/images/eco-product-v2.png"
             alt="eco_product_logo"
-            className={"w-28"}
+            className={"w-24"}
           />
           <p
             className={
               "mt-2 font-open-sans-semibold uppercase text-lg text-center leading-tight tracking-wide text-gray-600"
             }
           >
-            Натуральный продукт
+            Натуральный
+            <br />
+            продукт
           </p>
         </div>
         <div
-          className={"place-self-start flex flex-col items-center w-28 mt-16"}
+          className={"mt-14 place-self-start justify-self-center  flex flex-col items-center w-fit"}
         >
           <img
-            src="/images/eco-sources.png"
-            alt="eco_sources_logo"
-            className={"w-28"}
+            src="/images/high-naringin.png"
+            alt="eco_product_logo"
+            className={"w-24"}
           />
           <p
             className={
               "mt-2 font-open-sans-semibold uppercase text-lg text-center leading-tight tracking-wide text-gray-600"
             }
           >
-            Экологически чистое сырье
+            Высокая
+            <br />
+            Концентрация
+            <br />
+            Нарингина
+          </p>
+        </div>
+        <div
+          className={"mt-14 place-self-start justify-self-start flex flex-col items-center w-fit"}
+        >
+          <img
+            src="/images/eco-sources-v2.png"
+            alt="eco_sources_logo"
+            className={"w-24"}
+          />
+          <p
+            className={
+              "mt-2 font-open-sans-semibold uppercase text-lg text-center leading-tight tracking-wide text-gray-600"
+            }
+          >
+            Экологически <br /> чистое сырье
           </p>
         </div>
       </div>

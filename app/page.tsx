@@ -1,6 +1,6 @@
 import { About } from "./component/About";
 import { Footer } from "./component/Footer";
-import { Grapefruit } from "./component/Grapefruit";
+import { HowItWorks } from "./component/HowItWorks";
 import { Header } from "./component/Header";
 import { Immunity } from "./component/Immunity";
 import { Slider } from "./component/Slider";
@@ -13,7 +13,7 @@ export default function Home() {
       <main>
         <About />
         <Slider />
-        <Grapefruit />
+        <HowItWorks />
         <Immunity />
         <WhereToBuy />
       </main>

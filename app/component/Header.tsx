@@ -30,7 +30,7 @@ const Header: FC = () => {
         <NavMenu />
       </nav>
       <div className={"hidden md:block md:absolute md:w-60 right-56 bottom-3 "}>
-        <img src="/images/citrolux-vs-pack.png" alt="citrolux_pack" className={"w-40 m-auto"} />
+        <img src="/images/citrolux-pack.png" alt="citrolux_pack" className={"w-40 m-auto"} />
       </div>
     </header>
   );
