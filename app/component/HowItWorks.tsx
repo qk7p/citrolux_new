@@ -33,7 +33,7 @@ const HowItWorks: FC = () => {
               "mb-4 px-8 text-center font-open-sans-regular text-lg text-gray-500 leading-5 tracking-wide"
             }
           >
-            Нарингин обладает свойствами "природного антибиотика" и антиоксиданта
+            Нарингин обладает свойствами &quot;природного антибиотика&quot; и антиоксиданта
           </p>
           <div className="">
             <img src="/images/grapefruit.png" alt="grapefruit" />
