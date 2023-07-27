@@ -24,7 +24,7 @@ const About: FC = () => {
       >
         <h4
           className={
-            "mt-40 italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
+            "mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
           }
         >
           <span className={"text-main"}>Цитролюкс</span> &ndash; забота о себе и
@@ -33,7 +33,7 @@ const About: FC = () => {
         <div className={"row-span-2 flex flex-col items-center justify-start"}>
           <img src={"/images/citrolux-flakon.png"} alt={"citrolux_flakon"} />
         </div>
-        <div className={"mt-40 flex justify-end"}>
+        <div className={"mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 flex justify-end"}>
           <a
             href="/files/citrolux.pdf"
             target={"_blank"}
