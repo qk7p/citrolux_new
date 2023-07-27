@@ -9,11 +9,11 @@ type SliderItem = {
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const sliderImages: SliderItem[] = [
-    { img: "/images/slide-1.jpg" },
-    { img: "/images/slide-2.jpg" },
-    { img: "/images/slide-3.jpg" },
-    { img: "/images/slide-4.jpg" },
-    { img: "/images/slide-5.jpg" },
+    { img: "/images/slide-1-plashka.jpg" },
+    { img: "/images/slide-2-plashka.jpg" },
+    { img: "/images/slide-3-plashka.jpg" },
+    { img: "/images/slide-4-plashka.jpg" },
+    { img: "/images/slide-5-plashka.jpg" },
   ];
 
   const handlePreviousSlide = (event: MouseEvent<HTMLButtonElement>) => {
