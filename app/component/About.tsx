@@ -85,10 +85,10 @@ const About: FC = () => {
           </h5>
           <p>&ndash; Экстракт семян грейфрута</p>
           <p>&ndash; Аскорбиновая кислота</p>
-          <h5 className={"pr-12 text-xl text-main font-open-sans-light"}>
+          <h5 className={"pr-12 text-xl text-main font-open-sans-light break-words"}>
             Содержание активных компонентов в 1 мл раствора:
           </h5>
-          <p>&ndash; Цитрусовые биофлаваноиды (нарингин) - не менее 8мг/мл</p>
+          <p>&ndash; Цитрусовые биофлаваноиды (нарингин) - не менее 8 мг/мл</p>
           <p>&ndash; Витамин С 30 мг/мл</p>
           <h5 className={"text-xl text-main font-open-sans-light"}>
             Форма выпуска:
