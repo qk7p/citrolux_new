@@ -3,7 +3,7 @@ import { FC } from "react";
 const About: FC = () => {
   return (
     <section
-      className={"relative bg-about-background bg-cover bg-top bg-no-repeat"}
+      className={"relative bg-about-background bg-contain bg-top bg-no-repeat"}
       id={"about"}
     >
       <div
@@ -12,7 +12,7 @@ const About: FC = () => {
         }
       >
         <img
-          src={"/images/drop.png"}
+          src={"/images/purple-drop.png"}
           alt={"drop_image"}
           className={"md:absolute w-44 -top-20 z-10"}
         />
@@ -24,7 +24,7 @@ const About: FC = () => {
       >
         <h4
           className={
-            "mt-20 italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
+            "mt-40 italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
           }
         >
           <span className={"text-main"}>Цитролюкс</span> &ndash; забота о себе и
@@ -33,7 +33,7 @@ const About: FC = () => {
         <div className={"row-span-2 flex flex-col items-center justify-start"}>
           <img src={"/images/citrolux-flakon.png"} alt={"citrolux_flakon"} />
         </div>
-        <div className={"mt-20 flex justify-end"}>
+        <div className={"mt-40 flex justify-end"}>
           <a
             href="/files/citrolux.pdf"
             target={"_blank"}
