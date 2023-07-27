@@ -24,7 +24,7 @@ const About: FC = () => {
       >
         <h4
           className={
-            "mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 italic font-open-sans-light-italic text-3xl text-gray-600 leading-8"
+            "mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 lg:mb-10 font-open-sans-light uppercase text-3xl text-gray-600 leading-8"
           }
         >
           <span className={"text-main"}>Цитролюкс</span> &ndash; забота о себе и
