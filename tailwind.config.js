@@ -50,7 +50,8 @@ module.exports = {
       gridTemplateRows: {
         "about-rows": "auto auto auto",
         "immunity-rows": "auto auto auto",
-        "expand-hack": "0fr",
+        "0": "0fr",
+        "opened": "1fr",
       },
       gridTemplateColumns: {
         "about-cols": "1.3fr 0.8fr 1.3fr",

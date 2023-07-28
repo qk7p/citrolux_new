@@ -13,6 +13,8 @@ html {
   box-sizing: border-box;
 }
 
+
+
 @font-face {
   font-family: "OpenSansRegular";
   src: url("/fonts/OpenSans-Regular.ttf");
@@ -44,30 +46,3 @@ html {
   }
 }
 
-.wave {
-  overflow: hidden;
-  position: relative;
-  width: 630px;
-  height: 50px;
-}
-
-.circle {
-  position: absolute;
-  width: 630px;
-  height: 20px;
-  background: radial-gradient(
-    16px,
-    transparent,
-    transparent 4px,
-    black 4px,
-    black 10px,
-    transparent 11px
-  );
-  background-size: 30px 40px;
-}
-
-.circle2 {
-  top: 20px;
-  left: 15px;
-  background-position: 0px -20px;
-}

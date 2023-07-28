@@ -31,7 +31,7 @@ const NavMenu: FC = () => {
 
       <ul
         className={clsx(
-          " md:w-full md:bg-transparent flex flex-col md:flex-row md:justify-end md:pt-6 uppercase font-open-sans-bold text-sm tracking-wide text-wide md:text-main"
+          " md:w-full md:bg-transparent flex flex-col md:flex-row md:justify-end md:pt-6 uppercase font-open-sans-bold lg:text-xs xl:text-sm tracking-wide text-wide md:text-main"
         )}
       >
         <li>
