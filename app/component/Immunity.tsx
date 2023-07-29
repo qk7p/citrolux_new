@@ -77,7 +77,7 @@ const Immunity: FC = () => {
                   />
                   <p
                     className={
-                      "p-2 mt-2 md:w-48 lg:w-36 xl:w-44 md:aspect-square flex items-center text-center md:rounded-full md:bg-white text-main font-open-sans-semibold lg:text-xs xl:text-md leading-5"
+                      "p-2 mt-2 md:w-48 lg:w-36 xl:w-44 md:aspect-square flex items-center text-center md:rounded-full md:bg-white text-main md:text-black font-open-sans-semibold lg:text-xs xl:text-base leading-5"
                     }
                   >
                     Регуляция иммунологических реакций
@@ -88,7 +88,7 @@ const Immunity: FC = () => {
 
                   <p
                     className={
-                      "p-2 mt-2 md:w-48 lg:w-36 xl:w-44 md:aspect-square flex items-center text-center md:rounded-full md:bg-white text-main font-open-sans-semibold lg:text-xs xl:text-md leading-5"
+                      "p-2 mt-2 md:w-48 lg:w-36 xl:w-44 md:aspect-square flex items-center text-center md:rounded-full md:bg-white text-main md:text-black font-open-sans-semibold lg:text-xs xl:text-base leading-5"
                     }
                   >
                     Усиление активности иммуных клеток
@@ -102,7 +102,7 @@ const Immunity: FC = () => {
                   />
                   <p
                     className={
-                      "mb-8 md:mb-0 p-2 mt-2 md:w-48 lg:w-36 xl:w-44 md:aspect-square flex items-center text-center md:rounded-full md:bg-white text-main font-open-sans-semibold lg:text-xs xl:text-md leading-5"
+                      "mb-8 md:mb-0 p-2 mt-2 md:w-48 lg:w-36 xl:w-44 md:aspect-square flex items-center text-center md:rounded-full md:bg-white text-main md:text-black font-open-sans-semibold lg:text-xs xl:text-base leading-5"
                     }
                   >
                     Повышение сопротивляемости организма инфекциям
