@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 const HowItWorks: FC = () => {
   return (
@@ -36,7 +37,7 @@ const HowItWorks: FC = () => {
             Нарингин обладает свойствами &quot;природного антибиотика&quot; и антиоксиданта
           </p>
           <div className="">
-            <img src="/images/grapefruit.png" alt="grapefruit" />
+            <Image width={0} height={0} sizes={"100vw"} className={"w-full"} src="/images/grapefruit.webp" alt="grapefruit" />
           </div>
         </div>
       </div>

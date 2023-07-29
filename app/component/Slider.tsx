@@ -1,6 +1,7 @@
 "use client";
 
 import { FC, useState, MouseEvent } from "react";
+import Image from "next/image";
 
 type SliderItem = {
   img: string;
@@ -9,11 +10,11 @@ type SliderItem = {
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
   const sliderImages: SliderItem[] = [
-    { img: "/images/slide-1-plashka.jpg" },
-    { img: "/images/slide-2-plashka.jpg" },
-    { img: "/images/slide-3-plashka.jpg" },
-    { img: "/images/slide-4-plashka.jpg" },
-    { img: "/images/slide-5-plashka.jpg" },
+    { img: "/images/slide-1-plashka.webp" },
+    { img: "/images/slide-2-plashka.webp" },
+    { img: "/images/slide-3-plashka.webp" },
+    { img: "/images/slide-4-plashka.webp" },
+    { img: "/images/slide-5-plashka.webp" },
   ];
 
   const handlePreviousSlide = (event: MouseEvent<HTMLButtonElement>) => {
@@ -37,9 +38,7 @@ const Slider: FC = () => {
   return (
     <section className={"hidden md:block mt-20"}>
       <div
-        className={
-          "relative flex flex-row items-center w-full overflow-hidden"
-        }
+        className={"relative flex flex-row items-center w-full overflow-hidden"}
       >
         <div
           className={
@@ -47,7 +46,14 @@ const Slider: FC = () => {
           }
         >
           <button onClick={handlePreviousSlide} className={"w-full"}>
-            <img src="/images/arrow.svg" alt="arrow_left" />
+            <Image
+              width={0}
+              height={0}
+              sizes={"100vw"}
+              src="/images/arrow.svg"
+              alt="arrow_left"
+              className={"w-full"}
+            />
           </button>
         </div>
         <div
@@ -56,13 +62,24 @@ const Slider: FC = () => {
           }
         >
           <button onClick={handleNextSlider} className={"w-full"}>
-            <img src="/images/arrow.svg" alt="arrow_right" />
+            <Image
+              width={0}
+              height={0}
+              sizes={"100vw"}
+              src="/images/arrow.svg"
+              alt="arrow_right"
+              className={"w-full"}
+            />
           </button>
         </div>
         <div className={`w-full`}>
-          <img
+          <Image
+            width={0}
+            height={0}
+            sizes={"100vw"}
             src={sliderImages[activeSlide].img}
             className={"w-full h-full"}
+            alt={"slider_image"}
           />
         </div>
       </div>

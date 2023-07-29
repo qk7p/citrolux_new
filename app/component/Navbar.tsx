@@ -2,6 +2,7 @@
 
 import clsx from "clsx";
 import { FC, MouseEvent, useState } from "react";
+import Image from "next/image";
 
 interface NavbarProps {
   className?: string;
@@ -32,16 +33,16 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
             }
             href={"#"}
           >
-            <img
-              src={"/images/logo-glow.png"}
+            <Image width={0} height={0} sizes={"100vw"}
+              src={"/images/logo-glow.webp"}
               className={
                 "hidden lg:block lg:w-40 lg:m-auto xl:w-full xl:h-full"
               }
               alt={"citrolux_logo"}
             />
-            <img
-              src={"/images/citrolux-logo-white.png"}
-              className={"lg:hidden h-full ml-4 md:ml-12"}
+            <Image width={0} height={0} sizes={"100vw"}
+              src={"/images/citrolux-logo-white.webp"}
+              className={"lg:hidden h-full ml-4 md:ml-12 w-full"}
               alt={"citrolux_logo_white"}
             />
           </a>

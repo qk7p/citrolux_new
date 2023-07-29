@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 
 const WhereToBuy: FC = () => {
   type WhereToBuyItem = {
@@ -8,67 +9,67 @@ const WhereToBuy: FC = () => {
 
   const pharmacyList: WhereToBuyItem[] = [
     {
-      imgURL: "/images/logo/apteka_dlya_bereglivih.png",
+      imgURL: "/images/logo/apteka_dlya_bereglivih.webp",
       storeURL:
         "https://aptekaeconom.com/catalog/lekarstva-i-bady/obshcheukreplyayushchie-i-toniziruyushchie-preparaty/114995/",
     },
     {
-      imgURL: "/images/logo/stolichki.png",
+      imgURL: "/images/logo/stolichki.webp",
       storeURL: "https://stolichki.ru/drugs/citrolyuks-r-r-vnutr-50ml",
     },
     {
-      imgURL: "/images/logo/zdorov.ru.png",
+      imgURL: "/images/logo/zdorov.ru.webp",
       storeURL: "https://zdorov.ru/catalog/344/852/853/citrolyuks-107263",
     },
     {
-      imgURL: "/images/logo/lekopttorg.png",
+      imgURL: "/images/logo/lekopttorg.webp",
       storeURL:
         "https://lekopttorg.ru/catalog/lekarstva_i_bady/obshheukreplajushhije_i_tonizirujushhije_preparaty9/citroluks_fl-kap_50ml.html",
     },
     {
-      imgURL: "/images/logo/maksavit.png",
+      imgURL: "/images/logo/maksavit.webp",
       storeURL: "https://maksavit.ru/catalog/98479/",
     },
     {
-      imgURL: "/images/logo/nevis.svg",
+      imgURL: "/images/logo/nevis.webp",
       storeURL:
         "https://aptekanevis.ru/catalog/product/tsitrolyuks_r_r_50ml_obshcheukreplyayushchee_bad_/#ostatki",
     },
     {
-      imgURL: "/images/logo/neopharm.svg",
+      imgURL: "/images/logo/neopharm.webp",
       storeURL: "https://neopharm.ru/drugs/14672",
     },
     {
-      imgURL: "/images/logo/platena-zdorovya.svg",
+      imgURL: "/images/logo/platena-zdorovya.webp",
       storeURL:
         "https://planetazdorovo.ru/catalog/lekarstva-i-bad/prostuda-i-gripp/protivovirusnye-immunokorrektory/citrolyuks-rastvor-dlya-priema-v-2927311/",
     },
     {
-      imgURL: "/images/logo/ico-rigla_1.png",
+      imgURL: "/images/logo/ico-rigla_1.webp",
       storeURL: "https://www.rigla.ru/product/100686",
     },
     {
-      imgURL: "/images/logo/ico-sber-eapteka.png",
+      imgURL: "/images/logo/ico-sber-eapteka.webp",
       storeURL: "https://www.eapteka.ru/goods/id224158/",
     },
     {
-      imgURL: "/images/logo/ico-social-apteka.png",
+      imgURL: "/images/logo/ico-social-apteka.webp",
       storeURL:
         "https://social-apteka.ru/catalog/bad-vitaminno-mineralnye-kompleksy/citrolyuks-r-r-50ml-bad-48_19908/",
     },
     {
-      imgURL: "/images/logo/farmakopeika.svg",
+      imgURL: "/images/logo/farmakopeika.webp",
       storeURL: "https://farmakopeika.ru/katalog/2458/1280370/",
     },
     {
-      imgURL: "/images/logo/farmlend.png",
+      imgURL: "/images/logo/farmlend.webp",
       storeURL: "https://farmlend.ru/product/218133",
     },
   ];
 
   const marketplaceList: WhereToBuyItem[] = [
     {
-      imgURL: "/images/logo/yandex.market.png",
+      imgURL: "/images/logo/yandex.market.webp",
       storeURL:
         "https://pokupki.market.yandex.ru/search?cvredirect=2&text=%D1%86%D0%B8%D1%82%D1%80%D0%BE%D0%BB%D1%8E%D0%BA%D1%81",
     },
@@ -76,12 +77,12 @@ const WhereToBuy: FC = () => {
 
   const ePharmacyList: WhereToBuyItem[] = [
     {
-      imgURL: "/images/logo/apteka.ru.png",
+      imgURL: "/images/logo/apteka.ru.webp",
       storeURL:
         "https://apteka.ru/product/5e3274ed6df8020001929cbb/?q=%D1%86%D0%B8%D1%82%D1%80%D0%BE%D0%BB%D1%8E%D0%BA%D1%81",
     },
     {
-      imgURL: "/images/logo/zdravcity.png",
+      imgURL: "/images/logo/zdravcity.webp",
       storeURL: "https://zdravcity.ru/p_citroljuks-r-r-vnutr-50ml-0001477.html",
     },
   ];
@@ -112,7 +113,7 @@ const WhereToBuy: FC = () => {
             key={index}
             target={"_blank"}
           >
-            <img src={element.imgURL} className={"w-full"} />
+            <Image width={0} height={0} sizes={"100vw"} alt={"store_logo"} src={element.imgURL} className={"w-full"} />
           </a>
         ))}
       </div>
@@ -133,7 +134,7 @@ const WhereToBuy: FC = () => {
             key={index}
             target={"_blank"}
           >
-            <img src={element.imgURL} className={"w-full"} />
+            <Image width={0} height={0} sizes={"100vw"} alt={"store_logo"} src={element.imgURL} className={"w-full"} />
           </a>
         ))}
       </div>
@@ -154,7 +155,7 @@ const WhereToBuy: FC = () => {
             key={index}
             target={"_blank"}
           >
-            <img src={element.imgURL} className={"w-full"} />
+            <Image width={0} height={0} sizes={"100vw"} alt={"store_logo"} src={element.imgURL} className={"w-full"} />
           </a>
         ))}
       </div>

@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { NavMenu } from "./NavMenu";
 import { Navbar } from "./Navbar";
+import Image from "next/image";
 
 const Header: FC = () => {
   return (
@@ -16,8 +16,11 @@ const Header: FC = () => {
             "hidden md:block md:absolute md:w-60 md:-right-4 lg:right-20 xl:right-56 bottom-3 "
           }
         >
-          <img
-            src="/images/citrolux-pack.png"
+          <Image
+            width={0}
+            height={0}
+            sizes={"100vw"}
+            src="/images/citrolux-pack.webp"
             alt="citrolux_pack"
             className={"w-40 m-auto"}
           />

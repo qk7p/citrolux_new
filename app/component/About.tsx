@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FC } from "react";
 
 const About: FC = () => {
@@ -13,10 +14,13 @@ const About: FC = () => {
           "hidden w-full md:flex flex-col items-center md:mb-80 lg:mb-56 2xl:mb-56"
         }
       >
-        <img
-          src={"/images/purple-drop.png"}
+        <Image
+          src={"/images/purple-drop.webp"}
           alt={"drop_image"}
           className={"md:absolute w-44 md:top-4 lg:-top-20 z-10"}
+          width={0}
+          height={0}
+          sizes={"100vw"}
         />
       </div>
       <div
@@ -37,15 +41,33 @@ const About: FC = () => {
             "row-start-1 md:row-span-2 col-span-3 md:col-auto flex flex-col items-center justify-start w-2/3 md:w-full mt-8 md:mt-0 m-auto"
           }
         >
-          <img src={"/images/citrolux-flakon.png"} alt={"citrolux_flakon"} />
+          <Image
+            src={"/images/citrolux-flakon.webp"}
+            alt={"citrolux_flakon"}
+            width={0}
+            height={0}
+            sizes={"100vw"}
+            className={"w-full"}
+          />
         </div>
-        <div className={"mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 hidden md:flex justify-end"}>
+        <div
+          className={
+            "mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 hidden md:flex justify-end"
+          }
+        >
           <a
             href="/files/citrolux.pdf"
             target={"_blank"}
             className={"flex flex-col items-center hover:opacity-70"}
           >
-            <img src="/images/pdf.png" alt="pdf_logo" className={"w-16"} />
+            <Image
+              src="/images/pdf.webp"
+              alt="pdf_logo"
+              className={"w-16"}
+              width={0}
+              height={0}
+              sizes={"100vw"}
+            />
             <p
               className={
                 "w-40 text-sm text-center underline text-main leading-tight tracking-tight"
@@ -85,7 +107,11 @@ const About: FC = () => {
             детей старше 12 лет.
           </p>
         </div>
-        <div className={"col-span-3 md:col-auto flex flex-col font-open-snans-regular text-black"}>
+        <div
+          className={
+            "col-span-3 md:col-auto flex flex-col font-open-snans-regular text-black"
+          }
+        >
           <h5 className={"mt-3 text-xl text-main font-open-sans-light"}>
             Состав:
           </h5>
@@ -110,8 +136,11 @@ const About: FC = () => {
             "mt-14 place-self-start justify-self-center md:justify-self-end flex flex-col items-center w-fit"
           }
         >
-          <img
-            src="/images/eco-product-v2.png"
+          <Image
+            width={0}
+            height={0}
+            sizes={"100vw"}
+            src="/images/eco-product-v2.webp"
             alt="eco_product_logo"
             className={"w-12 md:w-24"}
           />
@@ -127,11 +156,14 @@ const About: FC = () => {
         </div>
         <div
           className={
-            "mt-14 place-self-startjustify-self-center  flex flex-col items-center w-fit"
+            "mt-14 place-self-start justify-self-center  flex flex-col items-center w-fit"
           }
         >
-          <img
-            src="/images/high-naringin.png"
+          <Image
+            width={0}
+            height={0}
+            sizes={"100vw"}
+            src="/images/high-naringin.webp"
             alt="eco_product_logo"
             className={"w-12 md:w-24"}
           />
@@ -152,8 +184,11 @@ const About: FC = () => {
             "mt-14 place-self-start justify-self-center md:justify-self-start flex flex-col items-center w-fit"
           }
         >
-          <img
-            src="/images/eco-sources-v2.png"
+          <Image
+            width={0}
+            height={0}
+            sizes={"100vw"}
+            src="/images/eco-sources-v2.webp"
             alt="eco_sources_logo"
             className={"w-12 md:w-24"}
           />
