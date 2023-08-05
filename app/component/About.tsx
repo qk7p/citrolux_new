@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { FC } from "react";
+import { fetchAboutContent } from "../api/aboutApi";
+import apiConfig from "../api-config";
 
-const About: FC = () => {
+const About: FC = async () => {
+  const content = await fetchAboutContent();
+
   return (
     <section
       className={
@@ -15,8 +19,15 @@ const About: FC = () => {
         }
       >
         <Image
-          src={"/images/purple-drop.webp"}
-          alt={"drop_image"}
+          src={
+            apiConfig.base_url +
+            content.data.data.blokOProdukte.data.attributes.drop_image.data
+              .attributes.url
+          }
+          alt={
+            content.data.data.blokOProdukte.data.attributes.drop_image.data
+              .attributes.alternativeText
+          }
           className={"md:absolute w-44 md:top-4 lg:-top-20 z-10"}
           width={0}
           height={0}
@@ -28,21 +39,26 @@ const About: FC = () => {
           "grid grid-rows-about-rows grid-cols-about-cols w-11/12 lg:w-2/3 m-auto"
         }
       >
-        <h4
+        <span
           className={
-            "row-start-2 col-span-3 md:col-auto md:row-auto mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 lg:mb-10 font-open-sans-light uppercase text-3xl text-gray-600 leading-8"
+            "row-start-2 col-span-3 md:col-auto md:row-auto mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 lg:mb-10"
           }
-        >
-          <span className={"text-main"}>Цитролюкс</span> &ndash; забота о себе и
-          близких каждый день.
-        </h4>
+          dangerouslySetInnerHTML={{
+            __html:
+              content.data.data.blokOProdukte.data.attributes.product_title,
+          }}
+        ></span>
         <div
           className={
             "row-start-1 md:row-span-2 col-span-3 md:col-auto flex flex-col items-center justify-start w-2/3 md:w-full mt-8 md:mt-0 m-auto"
           }
         >
           <Image
-            src={"/images/citrolux-flakon.webp"}
+            src={
+              apiConfig.base_url +
+              content.data.data.blokOProdukte.data.attributes.product_image.data
+                .attributes.url
+            }
             alt={"citrolux_flakon"}
             width={0}
             height={0}
@@ -61,8 +77,15 @@ const About: FC = () => {
             className={"flex flex-col items-center hover:opacity-70"}
           >
             <Image
-              src="/images/pdf.webp"
-              alt="pdf_logo"
+              src={
+                apiConfig.base_url +
+                content.data.data.blokOProdukte.data.attributes.icon.data
+                  .attributes.url
+              }
+              alt={
+                content.data.data.blokOProdukte.data.attributes.icon.data
+                  .attributes.alternativeText
+              }
               className={"w-16"}
               width={0}
               height={0}
@@ -78,58 +101,27 @@ const About: FC = () => {
           </a>
         </div>
         <div className={"col-span-3 md:col-auto text-gray-600 flex flex-col"}>
-          <h5 className={"font-open-sans-light text-main text-xl mt-8 md:mt-3"}>
-            О продукте:
-          </h5>
-          <p
-            className={
-              "font-open-sans-regular text-md leading-normal text-black"
-            }
-          >
-            Цитролюкс создан на основе экстракта из семян грейпфрута и обогащен
-            витамином С.{" "}
-          </p>
-          <p
-            className={
-              "mt-2 font-open-sans-regular text-md leading-normal text-black"
-            }
-          >
-            Экстракт из семня грейпфрута содержит биофлаваноид - нарингин,
-            обладающий уникальными свойствами &quot;природного антибиотика&quot;
-            и антиоксиданта.
-          </p>
-          <p
-            className={
-              "mt-2 font-open-sans-regular text-md leading-normal text-black"
-            }
-          >
-            Цитролюкс - натуральный продукт немецкого качества для взрослых и
-            детей старше 12 лет.
-          </p>
+          <span
+            dangerouslySetInnerHTML={{
+              __html:
+                content.data.data.blokOProdukte.data.attributes.about_product,
+            }}
+          ></span>
         </div>
         <div
           className={
             "col-span-3 md:col-auto flex flex-col font-open-snans-regular text-black"
           }
         >
-          <h5 className={"mt-3 text-xl text-main font-open-sans-light"}>
-            Состав:
-          </h5>
-          <p>&ndash; Экстракт семян грейфрута</p>
-          <p>&ndash; Аскорбиновая кислота</p>
-          <h5
-            className={
-              "pr-12 text-xl text-main font-open-sans-light break-words mt-4 md:mt-0"
-            }
-          >
-            Содержание активных компонентов в 1 мл раствора:
-          </h5>
-          <p>&ndash; Цитрусовые биофлаваноиды (нарингин) - не менее 8 мг/мл</p>
-          <p>&ndash; Витамин С 30 мг/мл</p>
-          <h5 className={"text-xl text-main font-open-sans-light mt-4 md:mt-0"}>
-            Форма выпуска:
-          </h5>
-          <p>&ndash; Раствор по 50 мл во флаконе</p>
+          {
+            <span
+              dangerouslySetInnerHTML={{
+                __html:
+                  content.data.data.blokOProdukte.data.attributes
+                    .product_description,
+              }}
+            ></span>
+          }
         </div>
         <div
           className={
@@ -140,19 +132,26 @@ const About: FC = () => {
             width={0}
             height={0}
             sizes={"100vw"}
-            src="/images/eco-product-v2.webp"
-            alt="eco_product_logo"
+            src={
+              apiConfig.base_url +
+              content.data.data.blokOProdukte.data.attributes.left_icon.icon
+                .data.attributes.url
+            }
+            alt={
+              content.data.data.blokOProdukte.data.attributes.left_icon.icon
+                .data.attributes.alternativeText
+            }
             className={"w-12 md:w-24"}
           />
-          <p
-            className={
-              "mt-2 font-open-sans-semibold uppercase text-xs md:text-lg text-center leading-tight tracking-wide text-gray-600"
-            }
-          >
-            Натуральный
-            <br />
-            продукт
-          </p>
+
+          <span
+            className={"mt-2 "}
+            dangerouslySetInnerHTML={{
+              __html:
+                content.data.data.blokOProdukte.data.attributes.left_icon
+                  .description,
+            }}
+          />
         </div>
         <div
           className={
@@ -163,21 +162,25 @@ const About: FC = () => {
             width={0}
             height={0}
             sizes={"100vw"}
-            src="/images/high-naringin.webp"
-            alt="eco_product_logo"
+            src={
+              apiConfig.base_url +
+              content.data.data.blokOProdukte.data.attributes.center_icon.icon
+                .data.attributes.url
+            }
+            alt={
+              content.data.data.blokOProdukte.data.attributes.center_icon.icon
+                .data.attributes.alternativeText
+            }
             className={"w-12 md:w-24"}
           />
-          <p
-            className={
-              "mt-2 font-open-sans-semibold uppercase text-xs md:text-lg text-center leading-tight tracking-wide text-gray-600"
-            }
-          >
-            Высокая
-            <br />
-            Концентрация
-            <br />
-            Нарингина
-          </p>
+          <span
+            className={"mt-2 "}
+            dangerouslySetInnerHTML={{
+              __html:
+                content.data.data.blokOProdukte.data.attributes.center_icon
+                  .description,
+            }}
+          />
         </div>
         <div
           className={
@@ -188,17 +191,25 @@ const About: FC = () => {
             width={0}
             height={0}
             sizes={"100vw"}
-            src="/images/eco-sources-v2.webp"
-            alt="eco_sources_logo"
+            src={
+              apiConfig.base_url +
+              content.data.data.blokOProdukte.data.attributes.right_icon.icon
+                .data.attributes.url
+            }
+            alt={
+              content.data.data.blokOProdukte.data.attributes.right_icon.icon
+                .data.attributes.alternativeText
+            }
             className={"w-12 md:w-24"}
           />
-          <p
-            className={
-              "mt-2 font-open-sans-semibold uppercase text-xs md:text-lg text-center leading-tight tracking-wide text-gray-600"
-            }
-          >
-            Экологически <br /> чистое сырье
-          </p>
+          <span
+            className={"mt-2 "}
+            dangerouslySetInnerHTML={{
+              __html:
+                content.data.data.blokOProdukte.data.attributes.right_icon
+                  .description,
+            }}
+          />
         </div>
       </div>
     </section>

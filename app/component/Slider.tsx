@@ -1,21 +1,16 @@
 "use client";
 
-import { FC, useState, MouseEvent } from "react";
+import { FC, useState, MouseEvent, useEffect } from "react";
 import Image from "next/image";
-
-type SliderItem = {
-  img: string;
-};
+import { getSliderImages } from "../api/sliderApi";
 
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const sliderImages: SliderItem[] = [
-    { img: "/images/slide-1-plashka.webp" },
-    { img: "/images/slide-2-plashka.webp" },
-    { img: "/images/slide-3-plashka.webp" },
-    { img: "/images/slide-4-plashka.webp" },
-    { img: "/images/slide-5-plashka.webp" },
-  ];
+  const [sliderImages, setSliderImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    getSliderImages().then((response) => setSliderImages(response));
+  }, []);
 
   const handlePreviousSlide = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -73,14 +68,17 @@ const Slider: FC = () => {
           </button>
         </div>
         <div className={`w-full`}>
-          <Image
-            width={0}
-            height={0}
-            sizes={"100vw"}
-            src={sliderImages[activeSlide].img}
-            className={"w-full h-full"}
-            alt={"slider_image"}
-          />
+          {sliderImages.length > 0 && (
+            <Image
+              width={0}
+              height={0}
+              sizes={"100vw"}
+              src={`http://localhost:1337${sliderImages[activeSlide]}`}
+              className={"w-full h-full"}
+              alt={"slider_image"}
+              priority={true}
+            />
+          )}
         </div>
       </div>
     </section>
