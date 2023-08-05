@@ -3,6 +3,7 @@
 import { FC, useState, MouseEvent, useEffect } from "react";
 import Image from "next/image";
 import { getSliderImages } from "../api/sliderApi";
+import apiConfig from "../api-config";
 
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -73,7 +74,7 @@ const Slider: FC = () => {
               width={0}
               height={0}
               sizes={"100vw"}
-              src={`http://localhost:1337${sliderImages[activeSlide]}`}
+              src={apiConfig.base_url + sliderImages[activeSlide]}
               className={"w-full h-full"}
               alt={"slider_image"}
               priority={true}
