@@ -42,7 +42,6 @@ export function fetchSliderImages() {
 
 export function getSliderImages() {
   return fetchSliderImages().then((response) => {
-    console.log(response);
 
     const parsedArray: string[] = [];
     response.data.data.slider.data.attributes.Image.data.map((element) =>

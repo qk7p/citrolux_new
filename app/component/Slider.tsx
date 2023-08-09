@@ -5,12 +5,26 @@ import Image from "next/image";
 import { getSliderImages } from "../api/sliderApi";
 import apiConfig from "../api-config";
 
+function renderSlider(data: JSX.Element[], index: number) {
+  console.log("Data", data);
+  console.log(data[index]);
+
+  return data[index];
+}
+
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [sliderImages, setSliderImages] = useState<string[]>([]);
+  const [sliderImages, setSliderImages] = useState<JSX.Element[]>([]);
 
   useEffect(() => {
-    getSliderImages().then((response) => setSliderImages(response));
+    getSliderImages().then((response) =>
+      response.map((url) => {
+        setSliderImages((prev) => [
+          ...prev,
+          <img src={apiConfig.base_url + url} alt={url}></img>,
+        ]);
+      })
+    );
   }, []);
 
   const handlePreviousSlide = (event: MouseEvent<HTMLButtonElement>) => {
@@ -18,8 +32,6 @@ const Slider: FC = () => {
     if (activeSlide > 0) {
       setActiveSlide((prev) => prev - 1);
     } else {
-      console.log(sliderImages.length);
-
       setActiveSlide(sliderImages.length - 1);
     }
   };
@@ -69,17 +81,7 @@ const Slider: FC = () => {
           </button>
         </div>
         <div className={`w-full`}>
-          {sliderImages.length > 0 && (
-            <Image
-              width={0}
-              height={0}
-              sizes={"100vw"}
-              src={apiConfig.base_url + sliderImages[activeSlide]}
-              className={"w-full h-full"}
-              alt={"slider_image"}
-              priority={true}
-            />
-          )}
+          {sliderImages.length > 0 && sliderImages[activeSlide]}
         </div>
       </div>
     </section>
