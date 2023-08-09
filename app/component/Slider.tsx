@@ -21,7 +21,7 @@ const Slider: FC = () => {
       response.map((url) => {
         setSliderImages((prev) => [
           ...prev,
-          <img src={apiConfig.base_url + url} alt={url}></img>,
+          <img src={apiConfig.base_url + url} alt={url} key={url}></img>,
         ]);
       })
     );
