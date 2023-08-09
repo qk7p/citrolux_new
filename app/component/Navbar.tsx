@@ -69,7 +69,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
       </div>
       <div
         className={clsx(
-          "overflow-hidden  grid ease-in duration-500 lg:flex",
+          "overflow-hidden lg:overflow-visible  grid ease-in duration-500 lg:flex",
           isExpanded ? "grid-rows-opened" : "grid-rows-0"
         )}
       >
@@ -78,7 +78,7 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
             "min-h-0 lg:min-h-full lg:w-full lg:bg-transparent flex flex-col lg:flex-row lg:justify-end lg:pt-6 uppercase font-open-sans-bold lg:text-xs xl:text-sm tracking-wide text-wide text-white mt-4 lg:mt-0 lg:text-main"
           )}
         >
-          <li className={"ml-8 md:ml-16 lg:ml-0"}>
+          <li className={"ml-8 md:ml-16 lg:ml-0 overflow-visible"}>
             <a
               href="#about"
               className={

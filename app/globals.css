@@ -42,7 +42,7 @@ html {
 
 @layer components {
   .nav_link__hover {
-    @apply relative after:content-[''] after:absolute after:-bottom-2 after:-left-2 after:w-0 after:bg-main after:h-1 after:rounded-md hover:after:block hover:after:w-1/2 after:ease-linear after:duration-300;
+    @apply relative after:content-[''] after:absolute after:-bottom-1 after:-left-2 after:w-0 after:bg-main after:h-1 after:rounded-md hover:after:block hover:after:w-1/2 after:ease-linear after:duration-300;
   }
 }
 
