@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FC } from "react";
 import { fetchAboutContent } from "../api/aboutApi";
 import apiConfig from "../api-config";
+import { data } from "autoprefixer";
 
 const About: FC = async () => {
   const content = await fetchAboutContent();
@@ -91,13 +92,7 @@ const About: FC = async () => {
               height={0}
               sizes={"100vw"}
             />
-            <p
-              className={
-                "w-40 text-sm text-center underline text-main leading-tight tracking-tight"
-              }
-            >
-              Скачать рекомендации по применению
-            </p>
+            <span dangerouslySetInnerHTML={{__html:content.data.data.blokOProdukte.data.attributes.icon_description}} />
           </a>
         </div>
         <div className={"col-span-3 md:col-auto text-gray-600 flex flex-col"}>

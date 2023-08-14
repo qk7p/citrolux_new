@@ -1,8 +1,10 @@
 "use client";
 
 import clsx from "clsx";
-import { FC, MouseEvent, useState } from "react";
+import { FC, MouseEvent, useEffect, useState } from "react";
 import Image from "next/image";
+import { HeaderContentResponse, fetchHeaderContent } from "../api/headerApi";
+import apiConfig from "../api-config";
 
 interface NavbarProps {
   className?: string;
@@ -14,6 +16,11 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
   const handleMenu = (event: MouseEvent<HTMLButtonElement>) => {
     setIsExpanded((prev) => !prev);
   };
+
+  const [content, setContent] = useState<HeaderContentResponse>();
+  useEffect(() => {
+    fetchHeaderContent().then((res) => setContent(res));
+  }, []);
 
   return (
     <nav
@@ -33,17 +40,49 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
             }
             href={"#"}
           >
-            <Image width={0} height={0} sizes={"100vw"}
-              src={"/images/logo-glow.webp"}
+            <Image
+              width={0}
+              height={0}
+              sizes={"100vw"}
+              src={
+                content
+                  ? apiConfig.base_url +
+                    content.data.data.heder.data.attributes.site_logo.data
+                      .attributes.url
+                  : ""
+              }
+              alt={
+                content
+                  ? content.data.data.heder.data.attributes.site_logo.data
+                      .attributes.alternativeText ||
+                    content.data.data.heder.data.attributes.site_logo.data
+                      .attributes.url
+                  : ""
+              }
               className={
                 "hidden lg:block lg:w-40 lg:m-auto xl:w-full xl:h-full"
               }
-              alt={"citrolux_logo"}
             />
-            <Image width={0} height={0} sizes={"100vw"}
-              src={"/images/citrolux-logo-white.webp"}
+            <Image
+              width={0}
+              height={0}
+              sizes={"100vw"}
+              src={
+                content
+                  ? apiConfig.base_url +
+                    content.data.data.heder.data.attributes.site_logo_mobile
+                      .data.attributes.url
+                  : ""
+              }
+              alt={
+                content
+                  ? content.data.data.heder.data.attributes.site_logo_mobile
+                      .data.attributes.alternativeText ||
+                    content.data.data.heder.data.attributes.site_logo_mobile
+                      .data.attributes.url
+                  : ""
+              }
               className={"lg:hidden h-full ml-4 md:ml-12 w-full"}
-              alt={"citrolux_logo_white"}
             />
           </a>
           <button
@@ -81,42 +120,42 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
           <li className={"ml-8 md:ml-16 lg:ml-0 overflow-visible"}>
             <a
               href="#about"
-              className={
-                "lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"
-              }
+              className={"lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"}
             >
-              О продукте
+              {content
+                ? content.data.data.heder.data.attributes.menu_item_1
+                : ""}
             </a>
           </li>
           <li className={"ml-8 md:ml-16 lg:ml-6 mt-2 lg:mt-0"}>
             <a
               href="#how-it-works"
-              className={
-                "lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"
-              }
+              className={"lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"}
             >
-              Как работает Цитролюкс?
+              {content
+                ? content.data.data.heder.data.attributes.menu_item_2
+                : ""}
             </a>
           </li>
           <li className={"ml-8 md:ml-16 lg:ml-6 mt-2 lg:mt-0"}>
             <a
               href="/files/citrolux.pdf"
               target={"_blank"}
-              className={
-                "lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"
-              }
+              className={"lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"}
             >
-              Рекомендации по применению
+              {content
+                ? content.data.data.heder.data.attributes.menu_item_3
+                : ""}
             </a>
           </li>
           <li className={"ml-8 md:ml-16 lg:ml-6 mt-2 mb-4 lg:mb-0 lg:mt-0"}>
             <a
               href="#where-to-buy"
-              className={
-                "lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"
-              }
+              className={"lg:nav_link__hover lg:nav_link__hover mt-4 lg:mt-0"}
             >
-              Где купить?
+              {content
+                ? content.data.data.heder.data.attributes.menu_item_4
+                : ""}
             </a>
           </li>
         </ul>

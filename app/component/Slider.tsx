@@ -5,12 +5,6 @@ import Image from "next/image";
 import { getSliderImages } from "../api/sliderApi";
 import apiConfig from "../api-config";
 
-function renderSlider(data: JSX.Element[], index: number) {
-  console.log("Data", data);
-  console.log(data[index]);
-
-  return data[index];
-}
 
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);

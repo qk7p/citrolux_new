@@ -1,4 +1,4 @@
-import graphqlApi from "./grapqlInstancs";
+import graphqlApi from "./grapqlInstance";
 
 export type SliderImageResponse = {
   data: {

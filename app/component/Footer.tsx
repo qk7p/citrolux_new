@@ -1,7 +1,11 @@
 import Image from "next/image";
 import { FC } from "react";
+import { fetchFooterContent } from "../api/footerApi";
+import apiConfig from "../api-config";
 
-const Footer: FC = () => {
+const Footer: FC = async () => {
+  const content = await fetchFooterContent();
+
   return (
     <footer>
       <div
@@ -17,44 +21,53 @@ const Footer: FC = () => {
                 height={0}
                 sizes={"100vw"}
                 className={"w-full"}
-                src="/images/pf-white.svg"
-                alt="pik_farma_white_logo"
+                src={
+                  apiConfig.base_url +
+                  content.data.data.futer.data.attributes.company_logo.data
+                    .attributes.url
+                }
+                alt={
+                  content.data.data.futer.data.attributes.company_logo.data
+                    .attributes.alternativeText
+                }
               />
             </div>
             <div
               className={
-                "ml-4 flex flex-col text-white font-proxima-regular leading-5"
+                "ml-4 flex flex-col text-white font-open-sans-regular leading-5"
               }
             >
-              <p className={"mb-1 md:md-0"}>© 2016 ООО «ПИК-ФАРМА»</p>
-              <p className={"mb-1 md:md-0"}>
-                Адрес: Россия, 125047, г. Москва, пер. Оружейный, д. 25, стр. 1,
-                помещение I, этаж 1.
-              </p>
-              <a
-                href={"tel:+74959255700"}
-                className={"hover:underline mb-1 md:mb-0"}
-              >
-                Тел.: (495) 925-57-00
-              </a>
-              <a
-                href={"https://www.pikfarma.ru"}
-                target={"_blank"}
-                className={"hover:underline"}
-              >
-                www.pikfarma.ru
-              </a>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: content.data.data.futer.data.attributes.company_name,
+                }}
+              />
+              <span
+                dangerouslySetInnerHTML={{
+                  __html:
+                    content.data.data.futer.data.attributes.company_adress,
+                }}
+              />
+              <span
+                dangerouslySetInnerHTML={{
+                  __html:
+                    content.data.data.futer.data.attributes.company_number,
+                }}
+              />
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: content.data.data.futer.data.attributes.company_site,
+                }}
+              />
             </div>
           </div>
         </div>
       </div>
-      <h2
-        className={
-          "text-4xl md:text-6xl 2xl:text-7xl text-center font-open-sans-light text-alert"
-        }
-      >
-        БАД. НЕ ЯВЛЯЕТСЯ ЛЕКАРТСВЕННЫМ СРЕДСТВОМ
-      </h2>
+      <span
+        dangerouslySetInnerHTML={{
+          __html: content.data.data.futer.data.attributes.desclaimer,
+        }}
+      />
     </footer>
   );
 };

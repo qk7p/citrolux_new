@@ -1,4 +1,4 @@
-import graphqlApi from "./grapqlInstancs";
+import graphqlApi from "./grapqlInstance";
 
 export type AboutContentResponse = {
   data: {
@@ -9,7 +9,7 @@ export type AboutContentResponse = {
             product_title: string;
             about_product: string;
             product_description: string;
-            icondescription: string;
+            icon_description: string;
             product_image: {
               data: {
                 attributes: {
