@@ -1,15 +1,10 @@
 import { FC } from "react";
 import Image from "next/image";
 import {
-  fetchWhereToBuyContent,
   parseWhereToBuyResponse,
 } from "../api/whereToBuyApi";
 
 const WhereToBuy: FC = async () => {
-  type WhereToBuyItem = {
-    imgURL: string;
-    storeURL: string;
-  };
 
   const content = await parseWhereToBuyResponse();
 
