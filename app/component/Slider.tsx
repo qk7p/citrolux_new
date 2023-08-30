@@ -4,22 +4,26 @@ import { FC, useState, MouseEvent, useEffect } from "react";
 import Image from "next/image";
 import { getSliderImages } from "../api/sliderApi";
 import apiConfig from "../api-config";
-
+import { Loading } from "./Loading";
 
 const Slider: FC = () => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [sliderImages, setSliderImages] = useState<JSX.Element[]>([]);
+  const [sliderImages, setSliderImages] = useState<string[]>([]);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
-    getSliderImages().then((response) =>
-      response.map((url) => {
-        setSliderImages((prev) => [
-          ...prev,
-          <img src={apiConfig.base_url + url} alt={url} key={url}></img>,
-        ]);
-      })
-    );
+    getSliderImages().then((response) => {
+      setSliderImages(response);
+    });
   }, []);
+
+  useEffect(() => {
+    setIsImageLoaded(false)
+  }, [activeSlide]);
+
+  const handleImageLoading = () => {
+    setIsImageLoaded(true);
+  };
 
   const handlePreviousSlide = (event: MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
@@ -40,11 +44,13 @@ const Slider: FC = () => {
   return (
     <section className={"hidden md:block mt-20"}>
       <div
-        className={"relative flex flex-row items-center w-full overflow-hidden"}
+        className={
+          "relative flex flex-row items-center w-full overflow-hidden aspect-slider"
+        }
       >
         <div
           className={
-            "absolute w-8 2xl:w-12 hover:scale-110 ease-in duration-300"
+            "absolute w-8 2xl:w-12 hover:scale-110 ease-in duration-300 z-20"
           }
         >
           <button onClick={handlePreviousSlide} className={"w-full"}>
@@ -55,12 +61,13 @@ const Slider: FC = () => {
               src="/images/arrow.svg"
               alt="arrow_left"
               className={"w-full"}
+              onLoad={handleImageLoading}
             />
           </button>
         </div>
         <div
           className={
-            "absolute w-8 2xl:w-12 right-0 rotate-180 hover:scale-110 ease-in duration-300"
+            "absolute w-8 2xl:w-12 right-0 rotate-180 hover:scale-110 ease-in duration-300 z-20"
           }
         >
           <button onClick={handleNextSlider} className={"w-full"}>
@@ -74,8 +81,22 @@ const Slider: FC = () => {
             />
           </button>
         </div>
+        <div className={"flex justify-center w-full z-10 absolute"}>
+          {!isImageLoaded && <Loading className={"w-40 opacity-50"} />}
+        </div>
         <div className={`w-full`}>
-          {sliderImages.length > 0 && sliderImages[activeSlide]}
+          {sliderImages.length > 0 && (
+            <Image
+              src={apiConfig.base_url + sliderImages[activeSlide]}
+              alt={sliderImages[activeSlide]}
+              width={0}
+              height={0}
+              sizes={"100vw"}
+              className={"w-full"}
+              priority
+              onLoad={handleImageLoading}
+            />
+          )}
         </div>
       </div>
     </section>
