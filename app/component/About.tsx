@@ -2,7 +2,6 @@ import Image from "next/image";
 import { FC } from "react";
 import { fetchAboutContent } from "../api/aboutApi";
 import apiConfig from "../api-config";
-import { data } from "autoprefixer";
 
 const About: FC = async () => {
   const content = await fetchAboutContent();
@@ -14,9 +13,10 @@ const About: FC = async () => {
       }
       id={"about"}
     >
+      <div className={"bg-banner-background-mobile bg-cover h-60 w-full md:hidden"} />
       <div
         className={
-          "hidden w-full md:flex flex-col items-center md:mb-80 lg:mb-56 2xl:mb-56"
+          "w-full flex flex-col items-center mb-16 md:mb-80 lg:mb-56 2xl:mb-56"
         }
       >
         <Image
@@ -29,7 +29,7 @@ const About: FC = async () => {
             content.data.data.blokOProdukte.data.attributes.drop_image.data
               .attributes.alternativeText
           }
-          className={"md:absolute w-44 md:top-4 lg:-top-20 z-10"}
+          className={"absolute w-20 md:w-44 top-52 md:top-4 lg:-top-20 z-10"}
           width={0}
           height={0}
           sizes={"100vw"}
@@ -42,7 +42,7 @@ const About: FC = async () => {
       >
         <span
           className={
-            "row-start-2 col-span-3 md:col-auto md:row-auto mt-0 lg:mt-4 xl:mt-14 2xl:mt-40 lg:mb-10"
+            "row-start-2 col-span-3 md:col-auto md:row-auto lg:mt-4 xl:mt-14 2xl:mt-40 lg:mb-10"
           }
           dangerouslySetInnerHTML={{
             __html:
@@ -51,7 +51,7 @@ const About: FC = async () => {
         ></span>
         <div
           className={
-            "row-start-1 md:row-span-2 col-span-3 md:col-auto flex flex-col items-center justify-start w-2/3 md:w-full mt-8 md:mt-0 m-auto"
+            "row-start-1 md:row-span-2 col-span-3 md:col-auto flex flex-col items-center justify-start w-2/4 md:w-full mt-8 md:mt-0 m-auto"
           }
         >
           <Image
@@ -92,7 +92,13 @@ const About: FC = async () => {
               height={0}
               sizes={"100vw"}
             />
-            <span dangerouslySetInnerHTML={{__html:content.data.data.blokOProdukte.data.attributes.icon_description}} />
+            <span
+              dangerouslySetInnerHTML={{
+                __html:
+                  content.data.data.blokOProdukte.data.attributes
+                    .icon_description,
+              }}
+            />
           </a>
         </div>
         <div className={"col-span-3 md:col-auto text-gray-600 flex flex-col"}>
@@ -105,7 +111,7 @@ const About: FC = async () => {
         </div>
         <div
           className={
-            "col-span-3 md:col-auto flex flex-col font-open-snans-regular text-black"
+            "col-span-3 md:col-auto flex flex-col font-open-sans-regular text-black"
           }
         >
           {

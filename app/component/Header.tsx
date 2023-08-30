@@ -9,9 +9,7 @@ const Header: FC = async () => {
 
   return (
     <header className={"lg:relative"}>
-      <Navbar
-        className={"sm:static lg:absolute lg:z-10 lg:w-full"}
-      />
+      <Navbar className={"sm:static lg:absolute lg:z-10 lg:w-full"} />
       <div
         className={
           "bg-main md:h-banner md:bg-banner-background bg-cover bg-no-repeat bg-top md:relative"

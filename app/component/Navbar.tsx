@@ -5,6 +5,7 @@ import { FC, MouseEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import { HeaderContentResponse, fetchHeaderContent } from "../api/headerApi";
 import apiConfig from "../api-config";
+import { Loading } from "./Loading";
 
 interface NavbarProps {
   className?: string;
@@ -12,6 +13,11 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ className }) => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isLogoLoaded, setIsLogoLoaded] = useState(false);
+
+  const handleLogoLoading = () => {
+    setIsLogoLoaded(true);
+  };
 
   const handleMenu = (event: MouseEvent<HTMLButtonElement>) => {
     setIsExpanded((prev) => !prev);
@@ -33,7 +39,9 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
       )}
     >
       <div>
-        <div className={"flex items-center justify-between pt-4 lg:pt-0"}>
+        <div
+          className={"flex items-center justify-between pt-4 lg:pt-0 relative"}
+        >
           <a
             className={
               "h-16 p-2 px-4 lg:h-auto lg:w-60 xl:ml-20 2xl:ml-24 mt-1"
@@ -59,10 +67,14 @@ const Navbar: FC<NavbarProps> = ({ className }) => {
                       .attributes.url
                   : ""
               }
-              className={
+              className={clsx(
                 "hidden lg:block lg:w-40 lg:m-auto xl:w-full xl:h-full"
-              }
+              )}
+              onLoadingComplete={handleLogoLoading}
             />
+
+            {!isLogoLoaded && <Loading className={"w-20 opacity-50"} />}
+
             <Image
               width={0}
               height={0}
