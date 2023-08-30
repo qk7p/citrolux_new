@@ -95,15 +95,19 @@ function parseData(data) {
 async function generateSafeList() {
   const aboutResponse = await fetchdata(aboutQuery);
   const aboutStyles = parseData(aboutResponse.data);
+  console.log("О продукте - готово");
 
   const footerResponse = await fetchdata(footerQuery);
   const footerStyles = parseData(footerResponse.data);
+  console.log("Футер - готово");
 
   const howItWorksResponse = await fetchdata(howItWorksQuery);
   const howItWorksStyles = parseData(howItWorksResponse.data);
+  console.log("Как это работает - готово");
 
   const immunityResponse = await fetchdata(immunityQuery);
   const immunityStyles = parseData(immunityResponse.data);
+  console.log("Иммунитет - готово");
 
   const combinedStyles = [...aboutStyles, ...footerStyles, ...howItWorksStyles, ...immunityStyles];
 
@@ -122,4 +126,6 @@ fs.readFile("tailwind.config.js", "utf8", async (err, data) => {
   fs.writeFile("tailwind.config.js", outputFile, (err) => {
     if (err) throw err;
   });
+  console.log("tailwind.config.js - записан");
 });
+
