@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { FC } from "react";
-import { fetchAboutContent } from "../api/aboutApi";
 import apiConfig from "../api-config";
+import { fetchAboutContent } from "../api/aboutApi";
 
 const About: FC = async () => {
   const content = await fetchAboutContent();
@@ -13,7 +13,9 @@ const About: FC = async () => {
       }
       id={"about"}
     >
-      <div className={"bg-banner-background-mobile bg-cover h-60 w-full md:hidden"} />
+      <div
+        className={"bg-banner-background-mobile bg-cover h-60 w-full md:hidden"}
+      />
       <div
         className={
           "w-full flex flex-col items-center mb-16 md:mb-80 lg:mb-56 2xl:mb-56"

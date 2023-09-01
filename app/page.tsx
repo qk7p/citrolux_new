@@ -6,6 +6,9 @@ import { Immunity } from "./component/Immunity";
 import { Slider } from "./component/Slider";
 import { WhereToBuy } from "./component/WhereToBuy";
 
+export const revalidate = 60;
+
+
 export default function Home() {
   return (
     <>

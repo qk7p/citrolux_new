@@ -147,7 +147,10 @@ query About {
 `;
 
 export function fetchAboutContent() {
-  return graphqlApi.post<any, AboutContentResponse>("", {
-    query: query,
-  });
+  return graphqlApi.post<any, AboutContentResponse>(
+    "",
+    {
+      query: query,
+    },
+  );
 }
