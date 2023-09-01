@@ -17,6 +17,26 @@ const About: FC = async () => {
         src={"/images/orange-1.webp"}
         alt={"orange-1"}
         className={
+          "absolute w-28 top-[300px] opacity-20 -left-6 -z-10 md:hidden"
+        }
+        width={0}
+        height={0}
+        sizes={"100vw"}
+      />
+        <Image
+          src={"/images/orange-2.webp"}
+          alt={"orange-1"}
+          className={
+            "absolute w-28 top-[375px] opacity-20 -right-4 -z-10 md:hidden"
+          }
+          width={0}
+          height={0}
+          sizes={"100vw"}
+        />
+      <Image
+        src={"/images/orange-1.webp"}
+        alt={"orange-1"}
+        className={
           "absolute w-40 top-[1050px] opacity-20 -left-10 -z-10 md:hidden"
         }
         width={0}
