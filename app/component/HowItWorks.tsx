@@ -7,7 +7,17 @@ const HowItWorks: FC = async () => {
   const content = await fetchHowItWorksContent();
 
   return (
-    <section className={"mt-10 lg:mt-20"} id={"how-it-works"}>
+    <section className={"relative mt-10 lg:mt-20"} id={"how-it-works"}>
+        <Image
+            src={"/images/orange-3.webp"}
+            alt={"orange-1"}
+            className={
+                "absolute w-60 top-[500px] opacity-20 -right-32 -z-10 md:hidden"
+            }
+            width={0}
+            height={0}
+            sizes={"100vw"}
+        />
       <div
         className={
           "flex flex-col-reverse md:flex-col lg:flex-row items-center lg:items-start w-full lg:w-10/12 m-auto"
