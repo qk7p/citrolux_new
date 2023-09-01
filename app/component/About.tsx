@@ -13,6 +13,36 @@ const About: FC = async () => {
       }
       id={"about"}
     >
+      <Image
+        src={"/images/orange-1.webp"}
+        alt={"orange-1"}
+        className={
+          "absolute w-40 top-[1050px] opacity-20 -left-10 -z-10 md:hidden"
+        }
+        width={0}
+        height={0}
+        sizes={"100vw"}
+      />
+      <Image
+        src={"/images/orange-2.webp"}
+        alt={"orange-1"}
+        className={
+          "absolute w-48 top-[850px] opacity-20 -right-10 -z-10 md:hidden"
+        }
+        width={0}
+        height={0}
+        sizes={"100vw"}
+      />
+      <Image
+        src={"/images/orange-3.webp"}
+        alt={"orange-1"}
+        className={
+          "absolute w-36 top-[1200px] opacity-20 left-48 -z-10 md:hidden"
+        }
+        width={0}
+        height={0}
+        sizes={"100vw"}
+      />
       <div
         className={"bg-banner-background-mobile bg-cover h-60 w-full md:hidden"}
       />
